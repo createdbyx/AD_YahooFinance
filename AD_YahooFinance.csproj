@@ -99,6 +99,7 @@
     <Error Condition="!Exists('..\..\..\CombinedProjectsSolution\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\CombinedProjectsSolution\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)*.*" "$(ProjectDir)..\AutoDownloader\bin\Debug\Plugins\$(ProjectName)\" /Y</PostBuildEvent>
+    <PostBuildEvent>rmdir /s /q "$(ProjectDir)..\AutoDownloader\bin\Debug\Plugins\$(ProjectName)\"
+xcopy "$(TargetDir)*.*" "$(ProjectDir)..\AutoDownloader\bin\Debug\Plugins\$(ProjectName)\" /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>
